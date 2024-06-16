@@ -99,17 +99,16 @@ do
     end
     --
     Utility.CLCheck = function()
-        repeat task.wait() until iswindowactive()
-        do
-            local InputHandle = Utility.AddInstance("TextBox", {
-                Position = UDim2.new(0, 0, 0, 0)
-            })
+     
+          --  local InputHandle = Utility.AddInstance("TextBox", {
+          --      Position = UDim2.new(0, 0, 0, 0)
+          --  })
             --
-            InputHandle:CaptureFocus() task.wait() keypress(0x4E) task.wait() keyrelease(0x4E) InputHandle:ReleaseFocus()
-            Library.Input.Caplock = InputHandle.Text == "N" and true or false
-            InputHandle:Destroy()
+          --  InputHandle:CaptureFocus() task.wait() keypress(0x4E) task.wait() keyrelease(0x4E) InputHandle:ReleaseFocus()
+           -- Library.Input.Caplock = InputHandle.Text == "N" and true or false
+           -- InputHandle:Destroy()
         end
-    end
+
     --
     Utility.Loop = function(Delay, Call)
         local Callback = typeof(Call) == "function" and Call or function() end
@@ -519,7 +518,7 @@ do
         Window.SetText(1, "Checking Assets")
         --
         Window.SetText(1, "Checking Input")
-        Utility.CLCheck(Window)
+        --Utility.CLCheck(Window)
         --
         Window.SetText(2, "Finished")
         --
