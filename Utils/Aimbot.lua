@@ -103,7 +103,7 @@ end
 local function Load()
 	OriginalSensitivity = UserInputService.MouseDeltaSensitivity
 
-	ServiceConnections.RenderSteppedConnection = RunService.Heartbeat:Connect(function()
+	ServiceConnections.RenderSteppedConnection = RunService.PhysicsStepping:Connect(function()
 		if Environment.FOVSettings.Enabled and Environment.Settings.Enabled then
 			Environment.FOVCircle.Radius = Environment.FOVSettings.Amount
 			Environment.FOVCircle.Thickness = Environment.FOVSettings.Thickness
