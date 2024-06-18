@@ -1,7 +1,3 @@
-local GameTable = {
-    [286090429] = 'https://raw.githubusercontent.com/PandaHubRoblox/Lurium.cc/main/Games/Arsenal.lua',
-
+local whitelist = {
+    ["5463024433"] = true,
 }
-
-return GameTable
-
