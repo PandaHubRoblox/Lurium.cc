@@ -1,10 +1,3 @@
---[[
-
-	Aimbot Module [AirHub] by Exunys © CC0 1.0 Universal (2023)
-
-	https://github.com/Exunys
-
-]]
 
 --// Cache
 
@@ -103,7 +96,7 @@ end
 local function Load()
 	OriginalSensitivity = UserInputService.MouseDeltaSensitivity
 
-	ServiceConnections.RenderSteppedConnection = RunService.PhysicsStepping:Connect(function()
+	ServiceConnections.RenderSteppedConnection = RunService.Heartbeat:Connect(function(dt)
 		if Environment.FOVSettings.Enabled and Environment.Settings.Enabled then
 			Environment.FOVCircle.Radius = Environment.FOVSettings.Amount
 			Environment.FOVCircle.Thickness = Environment.FOVSettings.Thickness
