@@ -1,4 +1,4 @@
-
+print("lib start")
 -- / Locals
 local Workspace = game:GetService("Workspace")
 local Player = game:GetService("Players").LocalPlayer
@@ -19,6 +19,7 @@ local TweenTable = {
         TweenInfo.new(0.17, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, 0, false, 0)
     }
 }
+print("made it to table")
 local assets = {
 	["lucide-accessibility"] = "rbxassetid://10709751939",
 		["lucide-activity"] = "rbxassetid://10709752035",
@@ -839,6 +840,7 @@ local assets = {
 		["lucide-zoom-in"] = "rbxassetid://10747384552",
 		["lucide-zoom-out"] = "rbxassetid://10747384679",
 }
+print("past long table")
 
 local CreateTween = function(name, speed, style, direction, loop, reverse, delay)
     name = name
@@ -1661,7 +1663,7 @@ function library:GetIcon(Name)
 	end
 	return nil
 end
-
+print("surppassed library get icon")
 function library:Init(key)
     for _,v in next, CoreGuiService:GetChildren() do
         if v.Name == "screen" then
@@ -1847,25 +1849,28 @@ function library:Init(key)
         CurrentTab = ""
     }
     CreateTween("tab_text_colour", 0.16)
+    print("reaching new tab")
     function TabLibrary:NewTab(title, icon)
+        
         title = title or "tab"
-local Icon
-if library:GetIcon(icon) then
-    Icon = library:GetIcon(Icon)
-end
-if icon == "" or nil then
-    Icon = nil
-end
+
+--local Icon
+--if library:GetIcon(icon) then
+  --  Icon = library:GetIcon(Icon)
+--end
+--if icon == "" or nil then
+ --   Icon = nil
+--end
         local tabButton = Instance.new("TextButton")
         local page = Instance.new("ScrollingFrame")
         local pageLayout = Instance.new("UIListLayout")
         local pagePadding = Instance.new("UIPadding")
-        local imageLabel = Instance.new("ImageLabel")
-        imageLabel.BackgroundTransparency = 1,
-        imageLabel.AnchorPoint = Vector2.new(0, 0.5),
-        imageLabel.Size = UDim2.fromOffset(16, 16),
-        imageLabel.Position = UDim2.new(0, 8, 0.5, 0),
-        imageLabel.Image = Icon and Icon or nil
+       -- local imageLabel = Instance.new("ImageLabel")
+        --imageLabel.BackgroundTransparency = 1,
+        --imageLabel.AnchorPoint = Vector2.new(0, 0.5),
+        --imageLabel.Size = UDim2.fromOffset(16, 16),
+       -- imageLabel.Position = UDim2.new(0, 8, 0.5, 0),
+        --imageLabel.Image = Icon and Icon or nil
         tabButton.Name = "tabButton"
         tabButton.Parent = tabButtons
         tabButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -1942,6 +1947,7 @@ end
 
         CreateTween("hover", 0.16)
         local Components = {}
+        print("surpassed new tab")
         function Components:NewLabel(text, alignment)
             text = text or "label"
             alignment = alignment or "left"
