@@ -1,4 +1,4 @@
-print("lib start")
+print("lib start1")
 -- / Locals
 local Workspace = game:GetService("Workspace")
 local Player = game:GetService("Players").LocalPlayer
@@ -1861,15 +1861,16 @@ function library:Init(key)
 --if icon == "" or nil then
  --   Icon = nil
 --end
+print("ddoing tab stuff")
         local tabButton = Instance.new("TextButton")
         local page = Instance.new("ScrollingFrame")
         local pageLayout = Instance.new("UIListLayout")
         local pagePadding = Instance.new("UIPadding")
-       -- local imageLabel = Instance.new("ImageLabel")
-        --imageLabel.BackgroundTransparency = 1,
-        --imageLabel.AnchorPoint = Vector2.new(0, 0.5),
-        --imageLabel.Size = UDim2.fromOffset(16, 16),
-       -- imageLabel.Position = UDim2.new(0, 8, 0.5, 0),
+        local imageLabel = Instance.new("ImageLabel")
+        imageLabel.BackgroundTransparency = 1,
+        imageLabel.AnchorPoint = Vector2.new(0, 0.5),
+        imageLabel.Size = UDim2.fromOffset(16, 16),
+     imageLabel.Position = UDim2.new(0, 8, 0.5, 0),
         --imageLabel.Image = Icon and Icon or nil
         tabButton.Name = "tabButton"
         tabButton.Parent = tabButtons
