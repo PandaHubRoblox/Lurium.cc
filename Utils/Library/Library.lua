@@ -1655,7 +1655,7 @@ function library:Introduction()
     wait(.2)
     introduction:Destroy()
 end
-function Library:GetIcon(Name)
+function library:GetIcon(Name)
 	if Name ~= nil and assets["lucide-" .. Name] then
 		return assets["lucide-" .. Name]
 	end
@@ -1850,8 +1850,8 @@ function library:Init(key)
     function TabLibrary:NewTab(title, icon)
         title = title or "tab"
 local Icon
-if Library:GetIcon(icon) then
-    Icon = Library:GetIcon(Icon)
+if library:GetIcon(icon) then
+    Icon = library:GetIcon(Icon)
 end
 if icon == "" or nil then
     Icon = nil
