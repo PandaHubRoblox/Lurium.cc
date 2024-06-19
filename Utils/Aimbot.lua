@@ -37,7 +37,7 @@ getgenv().AirHub.Aimbot = {
 	},
 
 	FOVSettings = {
-		Enabled = true,
+		Enabled = false,
 		Visible = true,
 		Amount = 90,
 		Color = Color3fromRGB(255, 255, 255),
