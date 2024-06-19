@@ -1,4 +1,4 @@
-print("lib start2")
+print("lib start21")
 -- / Locals
 local Workspace = game:GetService("Workspace")
 local Player = game:GetService("Players").LocalPlayer
@@ -1866,7 +1866,7 @@ print("ddoing tab stuff")
         local page = Instance.new("ScrollingFrame")
         local pageLayout = Instance.new("UIListLayout")
         local pagePadding = Instance.new("UIPadding")
-        local imageLabel = Instance.new("ImageLabel" tabButton)
+        local imageLabel = Instance.new("ImageLabel", tabButton)
         imageLabel.BackgroundTransparency = 1
         imageLabel.AnchorPoint = Vector2.new(0, 0.5)
         imageLabel.Size = UDim2.fromOffset(16, 16)
