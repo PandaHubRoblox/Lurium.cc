@@ -1,4 +1,4 @@
-print("lib test")
+print("lib bhh")
 -- / Locals
 local Workspace = game:GetService("Workspace")
 local Player = game:GetService("Players").LocalPlayer
@@ -841,7 +841,8 @@ local assets = {
 		["lucide-zoom-out"] = "rbxassetid://10747384679",
 }
 local DefaultTheme = {
-   ClickColor = Color3.fromRGB(38, 114, 255)
+   ClickColor = Color3.fromRGB(38, 114, 255),
+   SecondaryColor = Color3.fromRGB(25, 77, 167),
 }
 
 
@@ -2494,7 +2495,7 @@ end)
             toggleDesignCorner.Name = "toggleDesignCorner"
             toggleDesignCorner.Parent = toggleDesign
 
-            toggleDesignGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(157, 115, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(106, 69, 181))}
+            toggleDesignGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, DefaultTheme.ClickColor), ColorSequenceKeypoint.new(1.00, DefaultTheme.SecondaryColor)}
             toggleDesignGradient.Rotation = 90
             toggleDesignGradient.Name = "toggleDesignGradient"
             toggleDesignGradient.Parent = toggleDesign
@@ -4150,7 +4151,7 @@ end)
             sliderIndicatorStraint.Parent = sliderIndicator
             sliderIndicatorStraint.MaxSize = Vector2.new(392, 12)
 
-            sliderIndicatorGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00,  DefaultTheme.ClickColor), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(128, 94, 208))}
+            sliderIndicatorGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00,  DefaultTheme.ClickColor), ColorSequenceKeypoint.new(1.00, DefaultTheme.SecondaryColor)}
             sliderIndicatorGradient.Rotation = 90
             sliderIndicatorGradient.Name = "sliderIndicatorGradient"
             sliderIndicatorGradient.Parent = sliderIndicator
