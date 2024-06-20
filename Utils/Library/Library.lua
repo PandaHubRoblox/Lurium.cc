@@ -1854,13 +1854,13 @@ function library:Init(key)
         
         title = title or "tab"
 
---local Icon
---if library:GetIcon(icon) then
-  --  Icon = library:GetIcon(Icon)
---end
---if icon == "" or nil then
- --   Icon = nil
---end
+local Icon
+if library:GetIcon(icon) then
+   Icon = library:GetIcon(icon)
+end
+if icon == "" or nil then
+    Icon = nil
+end
 print("ddoing tab stuff")
         local tabButton = Instance.new("TextButton")
         local page = Instance.new("ScrollingFrame")
