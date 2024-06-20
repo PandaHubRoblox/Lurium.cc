@@ -841,7 +841,7 @@ local assets = {
 		["lucide-zoom-out"] = "rbxassetid://10747384679",
 }
 local DefaultTheme = {
-   ClickColor = Color3.fromRGB(159, 115, 255)
+   ClickColor = Color3.fromRGB(38, 114, 255)
 }
 
 
@@ -912,7 +912,9 @@ coroutine.wrap(function()
         library.fps =  math.round(1/v)
     end)
 end)()
-
+local function getColorFromTable(tbl)
+    return Color3.fromRGB(tbl[1], tbl[2], tbl[3])
+end
 function library:RoundNumber(int, float)
     return tonumber(string.format("%." .. (int or 0) .. "f", float))
 end
@@ -1084,7 +1086,7 @@ function library:Watermark(text)
 
     bar.Name = "bar"
     bar.Parent = barFolder
-    bar.BackgroundColor3 = Color3.fromRGB(159, 115, 255)
+    bar.BackgroundColor3 = DefaultTheme.ClickColor
     bar.BackgroundTransparency = 0
     bar.Size = UDim2.new(0, 0, 0, 1)
 
@@ -1189,7 +1191,7 @@ function library:Watermark(text)
     
         bar.Name = "bar"
         bar.Parent = barFolder
-        bar.BackgroundColor3 = Color3.fromRGB(159, 115, 255)
+        bar.BackgroundColor3 =  DefaultTheme.ClickColor
         bar.BackgroundTransparency = 0
         bar.Size = UDim2.new(0, 0, 0, 1)
     
@@ -1387,11 +1389,11 @@ function library:InitNotifications(text, duration, callback)
     
         bar.Name = "bar"
         bar.Parent = barFolder
-        bar.BackgroundColor3 = Color3.fromRGB(159, 115, 255)
+        bar.BackgroundColor3 =  DefaultTheme.ClickColor
         bar.BackgroundTransparency = 0.200
         bar.Size = UDim2.new(0, 0, 0, 1)
         if type == "notification" then
-            bar.BackgroundColor3 = Color3.fromRGB(159, 115, 255)
+            bar.BackgroundColor3 =  DefaultTheme.ClickColor
         elseif type == "alert" then
             bar.BackgroundColor3 = Color3.fromRGB(255, 246, 112)
         elseif type == "error" then
@@ -1559,7 +1561,7 @@ function library:Introduction()
     
     bar.Name = "bar"
     bar.Parent = barFolder
-    bar.BackgroundColor3 = Color3.fromRGB(159, 115, 255)
+    bar.BackgroundColor3 = DefaultTheme.ClickColor
     bar.BackgroundTransparency = 0.200
     bar.Size = UDim2.new(0, 0, 0, 1)
     
@@ -1581,7 +1583,7 @@ function library:Introduction()
     xsxLogo.Size = UDim2.new(0, 448, 0, 150)
     xsxLogo.Visible = true
     xsxLogo.Image = "http://www.roblox.com/asset/?id=9365068051"
-    xsxLogo.ImageColor3 = Color3.fromRGB(159, 115, 255)
+    xsxLogo.ImageColor3 = DefaultTheme.ClickColor
     xsxLogo.ImageTransparency = 1
     
     hashLogo.Name = "hashLogo"
@@ -1593,7 +1595,7 @@ function library:Introduction()
     hashLogo.Size = UDim2.new(0, 150, 0, 150)
     hashLogo.Visible = true
     hashLogo.Image = "http://www.roblox.com/asset/?id=9365069861"
-    hashLogo.ImageColor3 = Color3.fromRGB(159, 115, 255)
+    hashLogo.ImageColor3 =  DefaultTheme.ClickColor
     hashLogo.ImageTransparency = 1
     
     xsx.Name = "xsx"
@@ -1795,7 +1797,7 @@ function library:Init(key, Theme)
 
     bar.Name = "bar"
     bar.Parent = barFolder
-    bar.BackgroundColor3 = Color3.fromRGB(159, 115, 255)
+    bar.BackgroundColor3 =  DefaultTheme.ClickColor
     bar.BackgroundTransparency = 0.200
     bar.Size = UDim2.new(0, 592, 0, 1)
     bar.BorderSizePixel = 0
@@ -1923,7 +1925,7 @@ print("ddoing tab stuff")
         page.MidImage = "http://www.roblox.com/asset/?id=3062506202"
         page.ScrollBarThickness = 1
         page.TopImage = "http://www.roblox.com/asset/?id=3062506202"
-        page.ScrollBarImageColor3 = Color3.fromRGB(159, 115, 255)
+        page.ScrollBarImageColor3 =  DefaultTheme.ClickColor
         page.Visible = false
         
         pageLayout.Name = "pageLayout"
@@ -1941,7 +1943,7 @@ print("ddoing tab stuff")
 
         if TabLibrary.IsFirst then
             page.Visible = true
-            tabButton.TextColor3 = Color3.fromRGB(159, 115, 255)
+            tabButton.TextColor3 =  DefaultTheme.ClickColor
             TabLibrary.CurrentTab = title
         end
         
@@ -3223,7 +3225,8 @@ end)
 
                 textBoxValues.Focused:Connect(function()
                     textBoxValues:GetPropertyChangedSignal("Text"):Connect(ResizeTextBox)
-                    TweenService:Create(textbox, TweenTable["TextBox"], {BackgroundColor3 = Color3.fromRGB(159, 115, 255)}):Play()
+                    TweenService:Create(textbox, TweenTable["TextBox"], {BackgroundColor3 = DefaultTheme.ClickColor}):Play()
+
                 end)
 
                 textBoxValues.FocusLost:Connect(function()
@@ -3452,7 +3455,7 @@ end)
                 end)
 
                 textBoxValues.Focused:Connect(function()
-                    TweenService:Create(textbox, TweenTable["TextBox"], {BackgroundColor3 = Color3.fromRGB(159, 115, 255)}):Play()
+                    TweenService:Create(textbox, TweenTable["TextBox"], {BackgroundColor3 = DefaultTheme.ClickColor}):Play()
                 end)
 
                 textBoxValues.FocusLost:Connect(function()
@@ -3681,7 +3684,7 @@ end)
                 end)
 
                 textBoxValues.Focused:Connect(function()
-                    TweenService:Create(textbox, TweenTable["TextBox"], {BackgroundColor3 = Color3.fromRGB(159, 115, 255)}):Play()
+                    TweenService:Create(textbox, TweenTable["TextBox"], {BackgroundColor3 = DefaultTheme.ClickColor}):Play()
                 end)
 
                 textBoxValues.FocusLost:Connect(function()
@@ -3920,7 +3923,7 @@ end)
                 optionButton.TextColor3 = Color3.fromRGB(160, 160, 160)
                 optionButton.TextSize = 14.000
                 if optionButton.Text == default then
-                    optionButton.TextColor3 = Color3.fromRGB(159, 115, 255)
+                    optionButton.TextColor3 = DefaultTheme.ClickColor
                     callback(selectorText.Text)
                 end
 
@@ -3930,7 +3933,7 @@ end)
                             TweenService:Create(x, TweenTable["selector"], {TextColor3 = Color3.fromRGB(160, 160, 160)}):Play()
                         end
                     end
-                    TweenService:Create(optionButton, TweenTable["selector"], {TextColor3 = Color3.fromRGB(159, 115, 255)}):Play()
+                    TweenService:Create(optionButton, TweenTable["selector"], {TextColor3 = DefaultTheme.ClickColor}):Play()
                     selectorText.Text = optionButton.Text
                     callback(optionButton.Text)
                 end)
@@ -3966,7 +3969,7 @@ end)
                 optionButton.TextColor3 = Color3.fromRGB(140, 140, 140)
                 optionButton.TextSize = 14.000
                 if optionButton.Text == default then
-                    optionButton.TextColor3 = Color3.fromRGB(159, 115, 255)
+                    optionButton.TextColor3 =  DefaultTheme.ClickColor
                     callback(selectorText.Text)
                 end
 
@@ -3976,7 +3979,7 @@ end)
                             TweenService:Create(x, TweenTable["selector"], {TextColor3 = Color3.fromRGB(140, 140, 140)}):Play()
                         end
                     end
-                    TweenService:Create(optionButton, TweenTable["selector"], {TextColor3 = Color3.fromRGB(159, 115, 255)}):Play()
+                    TweenService:Create(optionButton, TweenTable["selector"], {TextColor3 =  DefaultTheme.ClickColor}):Play()
                     selectorText.Text = optionButton.Text
                     callback(optionButton.Text)
                 end)
@@ -4147,7 +4150,7 @@ end)
             sliderIndicatorStraint.Parent = sliderIndicator
             sliderIndicatorStraint.MaxSize = Vector2.new(392, 12)
 
-            sliderIndicatorGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(159, 115, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(128, 94, 208))}
+            sliderIndicatorGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00,  DefaultTheme.ClickColor), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(128, 94, 208))}
             sliderIndicatorGradient.Rotation = 90
             sliderIndicatorGradient.Name = "sliderIndicatorGradient"
             sliderIndicatorGradient.Parent = sliderIndicator
