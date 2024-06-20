@@ -1,4 +1,4 @@
-print("lib start212")
+print("lib start2123")
 -- / Locals
 local Workspace = game:GetService("Workspace")
 local Player = game:GetService("Players").LocalPlayer
@@ -840,6 +840,11 @@ local assets = {
 		["lucide-zoom-in"] = "rbxassetid://10747384552",
 		["lucide-zoom-out"] = "rbxassetid://10747384679",
 }
+local DefaultTheme = {
+   ClickColor = Color3.fromRGB(159, 115, 255)
+}
+
+
 print("past long table")
 
 local CreateTween = function(name, speed, style, direction, loop, reverse, delay)
@@ -1664,6 +1669,12 @@ function library:GetIcon(Name)
     end
     return nil
 end
+local assets = {
+    Close = "rbxassetid://9886659671",
+    Min = "rbxassetid://9886659276",
+    Max = "rbxassetid://9886659406",
+    Restore = "rbxassetid://9886659001"
+}
 
 -- Function to set the image label
 function SetImageLabel(imageLabel, icon)
@@ -1681,12 +1692,16 @@ function SetImageLabel(imageLabel, icon)
     end
 end
 print("surppassed library get icon")
-function library:Init(key)
+function library:Init(key, theme)
     for _,v in next, CoreGuiService:GetChildren() do
         if v.Name == "screen" then
             v:Destroy()
         end
     end
+    if theme then
+        DefaultTheme = theme
+    end
+
 
     local title = library.title
     key = key or Enum.KeyCode.RightAlt
@@ -2114,8 +2129,9 @@ print("ddoing tab stuff")
             end)
 
             button.MouseButton1Down:Connect(function()
-                TweenService:Create(buttonLabel, TweenTable["hover"], {TextColor3 = Color3.fromRGB(159, 115, 255)}):Play()
-            end)
+    TweenService:Create(buttonLabel, TweenTable["hover"], {TextColor3 = DefaultTheme.ClickColor}):Play()
+end)
+
             button.MouseButton1Up:Connect(function()
                 TweenService:Create(buttonLabel, TweenTable["hover"], {TextColor3 = Color3.fromRGB(190, 190, 190)}):Play()
             end)
