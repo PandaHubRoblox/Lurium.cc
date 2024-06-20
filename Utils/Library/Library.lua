@@ -1,4 +1,4 @@
-print("lib start2123")
+print("lib test")
 -- / Locals
 local Workspace = game:GetService("Workspace")
 local Player = game:GetService("Players").LocalPlayer
@@ -1692,14 +1692,14 @@ function SetImageLabel(imageLabel, icon)
     end
 end
 print("surppassed library get icon")
-function library:Init(key, theme)
+function library:Init(key, Theme)
     for _,v in next, CoreGuiService:GetChildren() do
         if v.Name == "screen" then
             v:Destroy()
         end
     end
-    if theme then
-        DefaultTheme = theme
+    if Theme then
+        DefaultTheme = Theme
     end
 
 
@@ -1959,7 +1959,7 @@ print("ddoing tab stuff")
                     TweenService:Create(v, TweenTable["tab_text_colour"], {TextColor3 = Color3.fromRGB(170, 170, 170)}):Play()
                 end
             end
-            TweenService:Create(tabButton, TweenTable["tab_text_colour"], {TextColor3 = Color3.fromRGB(159, 115, 255)}):Play()
+            TweenService:Create(tabButton, TweenTable["tab_text_colour"], {TextColor3 = DefaultTheme.ClickColor}):Play()
         end)
 
         local function UpdatePageSize()
@@ -2236,7 +2236,7 @@ end)
                     end)
         
                     button.MouseButton1Down:Connect(function()
-                        TweenService:Create(buttonLabel, TweenTable["hover"], {TextColor3 = Color3.fromRGB(159, 115, 255)}):Play()
+                        TweenService:Create(buttonLabel, TweenTable["hover"], {TextColor3 = DefaultTheme.ClickColor}):Play()
                     end)
                     button.MouseButton1Up:Connect(function()
                         TweenService:Create(buttonLabel, TweenTable["hover"], {TextColor3 = Color3.fromRGB(190, 190, 190)}):Play()
@@ -4387,7 +4387,8 @@ end)
                     TweenService:Create(v, TweenTable["tab_text_colour"], {TextColor3 = Color3.fromRGB(170, 170, 170)}):Play()
                 end
             end
-            TweenService:Create(tabButton, TweenTable["tab_text_colour"], {TextColor3 = Color3.fromRGB(159, 115, 255)}):Play()
+            TweenService:Create(tabButton, TweenTable["tab_text_colour"], {TextColor3 = DefaultTheme.ClickColor}):Play()
+
 
             return Components
         end
