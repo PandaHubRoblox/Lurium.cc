@@ -1871,7 +1871,7 @@ print("ddoing tab stuff")
         imageLabel.AnchorPoint = Vector2.new(0, 0.5)
         imageLabel.Size = UDim2.fromOffset(16, 16)
      imageLabel.Position = UDim2.new(0, 8, 0.5, 0)
-        --imageLabel.Image = Icon and Icon or nil
+        imageLabel.Image = Icon and Icon or nil
         tabButton.Name = "tabButton"
         tabButton.Parent = tabButtons
         tabButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
