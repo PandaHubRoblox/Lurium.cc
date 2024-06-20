@@ -1,4 +1,4 @@
-print("lib start21")
+print("lib start212")
 -- / Locals
 local Workspace = game:GetService("Workspace")
 local Player = game:GetService("Players").LocalPlayer
@@ -1657,11 +1657,28 @@ function library:Introduction()
     wait(.2)
     introduction:Destroy()
 end
+
 function library:GetIcon(Name)
-	if Name ~= nil and assets["lucide-" .. Name] then
-		return assets["lucide-" .. Name]
-	end
-	return nil
+    if Name ~= nil and Name ~= "" and assets["lucide-" .. Name] then
+        return assets["lucide-" .. Name]
+    end
+    return nil
+end
+
+-- Function to set the image label
+function SetImageLabel(imageLabel, icon)
+    local Icon = nil
+
+    if icon and icon ~= "" then
+        Icon = library:GetIcon(icon)
+    end
+
+    -- If Icon is still nil, it means no valid icon was found
+    if Icon == nil then
+        imageLabel.Image = "rbxassetid://default_no_icon" -- Replace with your default "no icon" asset ID
+    else
+        imageLabel.Image = Icon
+    end
 end
 print("surppassed library get icon")
 function library:Init(key)
@@ -1854,13 +1871,7 @@ function library:Init(key)
         
         title = title or "tab"
 
-local Icon
-if library:GetIcon(icon) then
-   Icon = library:GetIcon(icon)
-end
-if icon == "" or nil then
-    Icon = nil
-end
+
 print("ddoing tab stuff")
         local tabButton = Instance.new("TextButton")
         local page = Instance.new("ScrollingFrame")
@@ -1871,7 +1882,7 @@ print("ddoing tab stuff")
         imageLabel.AnchorPoint = Vector2.new(0, 0.5)
         imageLabel.Size = UDim2.fromOffset(16, 16)
      imageLabel.Position = UDim2.new(0, 8, 0.5, 0)
-        imageLabel.Image = Icon and Icon or nil
+     SetImageLabel(imageLabel, icon)
         tabButton.Name = "tabButton"
         tabButton.Parent = tabButtons
         tabButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
